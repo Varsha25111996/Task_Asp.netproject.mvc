@@ -1,0 +1,61 @@
+﻿@model Task_Asp.netproject.mvc.Models.EmployeeModel
+@using (Html.BeginForm("PostData", "Employee", FormMethod.Post))
+    {
+<div class=" row">
+    <div class=" col-md-3">
+        @Html.HiddenFor(m => m.EmployeeId)
+        <label>First Name</label>
+        @Html.TextBoxFor(m => m.Firstname, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Firstname, "", new { @class = "text-danger" })
+    </div>
+    <div class=" col-md-3">
+        <label>Last Name</label>
+        @Html.TextBoxFor(m => m.Lastname, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Lastname, "", new { @class = "text-danger" })
+    </div>
+    <div class=" col-md-3">
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.EmailAddress, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EmailAddress, "", new { @class = "text-danger" })
+    </div>
+    <div class=" col-md-3">
+        <label>Phone Number</label>
+        @Html.TextBoxFor(m => m.PhoneNumber, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+     </div>
+    
+        <div class=" col-md-3">
+            <label>Designation Name</label>
+            @*@Html.TextBoxFor(m => m.EmployeeDesignationId, "", new { @class = "form-control" })*@
+            @Html.DropDownListFor(m => m.EmployeeDesignationId, new SelectList(ViewBag.Design, "Value", "Text"), new { @class = "form-control", id = "EmployeeDesignationId" })
+        </div>
+        <div class=" col-md-3">
+            <label>Grade Name</label>
+            @*@Html.TextBoxFor(m => m.EmployeeDesignationId, "", new { @class = "form-control" })*@
+            @Html.DropDownListFor(m => m.DesignationGradeId, new SelectList(ViewBag.Design, "Value", "Text"), new { @class = "form-control", id = "DesignationGradeId" })
+        </div>
+
+        @*<div class=" col-md-3">
+            <label> Designation Name</label>
+            @Html.TextBoxFor(m => m.EmployeeDesignationId, new { @class = "form-control"})
+            @Html.DropDownListFor(m => m.EmployeeDesignationId, new SelectList(ViewBag.Design,"Value","Text"), new {@class = "form-control"})
+
+        </div>
+        <div class=" col-md-3">
+            <label> Grade Name</label>
+            @Html.TextBoxFor(m => m.DesignationGradeId, new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.DesignationGradeId, new SelectList(ViewBag.Design, "Value", "Text"), new { @class = "form-control" })
+            </div>*@
+
+
+        </div>
+    <button type=" Submit" class="btn btn-danger mt-2">Save Record</button>
+
+
+
+        }
+    
+
+
+
+

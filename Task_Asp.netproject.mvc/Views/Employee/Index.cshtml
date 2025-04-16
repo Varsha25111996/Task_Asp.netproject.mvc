@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class=" bg-black text-white text-center">Employee Information</h2>
+
+@Html.Partial("~/Views/Employee/Employee_View.cshtml")
+<br />
+<br />
+<br />
+<h2 class="bg-black text-white text-center">Employee Report</h2>
+
+@Html.Action("GetDetails")

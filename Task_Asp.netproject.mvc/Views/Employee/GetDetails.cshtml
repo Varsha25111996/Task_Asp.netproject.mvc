@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Task_Asp.netproject.mvc.Models.EmployeeReportModel>
+
+@{ 
+    Layout = null;
+}
+<table class="table table-bordered">
+    <tr>
+        <th>
+            EmployeeId
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            EmailAddress
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            EmployeeDesignationName
+        </th>
+        <th>
+            GradeName
+        </th>
+        <th>Edit/Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GradeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "GetByID", new {  id=item.EmployeeId}) |
+        
+            @Html.ActionLink("Delete", "Delete", new {id=item.EmployeeId})
+        </td>
+    </tr>
+}
+
+</table>
